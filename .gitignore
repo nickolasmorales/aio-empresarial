@@ -1,0 +1,23 @@
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Java e Maven
+**/target/
+*.class
+*.log
+
+# IntelliJ e VS Code
+.idea/
+*.iml
+.vscode/
+
+# Node / Angular
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Sistema
+.DS_Store
+Thumbs.db
