@@ -1,6 +1,11 @@
 spring:
+  config:
+    import: "optional:file:../.env[.properties]"
   application:
     name: aio-api
+  output:
+    ansi:
+      enabled: always
 
   datasource:
     url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
@@ -24,3 +29,16 @@ management:
     web:
       exposure:
         include: health,info
+
+logging:
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr([%-5level]) %clr([AIO]){cyan} %clr(%-35.35logger{35}){blue} %clr(»){faint} %msg%n%wEx"
+  level:
+    root: INFO
+    br.com.aio: DEBUG
+    org.springframework: INFO
+    org.springframework.data: WARN
+    org.hibernate: WARN
+    org.hibernate.SQL: WARN
+    org.flywaydb: INFO
+    com.zaxxer.hikari: INFO
